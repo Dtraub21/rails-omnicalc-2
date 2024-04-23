@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
+  # Addition
+  get("/", { :controller => "calculations", :action => "add_form" })
+  get("/add", { :controller => "calculations", :action => "add_form" })
+  post("/wizard_add", { :controller => "calculations", :action => "calculate_addition" })
 
-  get("/", { :controller => "addition", :action => "show_addition_form" })
+  # Subtraction
+  get("/subtract", { :controller => "calculations", :action => "subtract_form" })
+  post("/wizard_subtract", { :controller => "calculations", :action => "calculate_subtraction" })
 
-  get("/ad", { :controller => "addition", :action => "show_addition_form" })
-  get("/wizard_add", { :controller => "addition", :action => "add_these" })
+  # Multiplication
+  get("/multiply", { :controller => "calculations", :action => "multiply_form" })
+  post("/wizard_multiply", { :controller => "calculations", :action => "calculate_multiplication" })
 
-  get("/subtract", { :controller => "subtract", :action => "show_sub_form" })
-  get("", { :controller => "subtraction", :action => "subtract" })
-
-  get("/multiply", { :controller => "multiplication", :action => "multiplication" })
-  get("/wizard_multiply", { :controller => "multiplication", :action => "multiply" })
-
-  get("/divide", { :controller => "division", :action => "show_division_form" })
-  get("/wizard_div", { :controller => "div", :action => "divide_these" })
-
+  # Division
+  get("/divide", { :controller => "calculations", :action => "divide_form" })
+  post("/wizard_divide", { :controller => "calculations", :action => "calculate_division" })
 end
